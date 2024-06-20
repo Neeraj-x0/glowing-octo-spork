@@ -32,7 +32,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.post(
-        "http://localhost:3000/profile/users",
+        "https://machine-test-backend.onrender.com/profile/users",
         {},
         {
           headers: {

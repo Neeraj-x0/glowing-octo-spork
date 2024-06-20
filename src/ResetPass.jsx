@@ -26,7 +26,7 @@ const ResetPassword = () => {
     const checkToken = async () => {
       try {
         await axios.post(
-          "http://localhost:3000/verify",
+          "https://machine-test-backend.onrender.com/verify",
           {},
           {
             headers: {
@@ -50,7 +50,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let response = await axios.post("http://localhost:3000/reset", {
+      let response = await axios.post("https://machine-test-backend.onrender.com/reset", {
         token,
         newPassword,
       });
@@ -68,7 +68,7 @@ const ResetPassword = () => {
   const handleReset = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/forgot", {
+      await axios.post("https://machine-test-backend.onrender.com/forgot", {
         email,
       });
       setSuccess(true);
