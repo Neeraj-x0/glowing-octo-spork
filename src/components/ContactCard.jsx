@@ -96,7 +96,7 @@ const ContactCard = ({ contact }) => {
           </div>
 
           <div className="flex gap-2 justify-between w-full mt-4">
-            <a href={"mailto:" + contact.phone} className="w-full" >
+            <a href={"tel:" + contact.phone} className="w-full" >
               <button className="border-2 items-center flex  justify-center gap-3 border-black rounded-lg w-full py-2">
                 <MdOutlineLocalPhone className="text-xl" />
                 Call
