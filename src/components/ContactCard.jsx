@@ -12,28 +12,18 @@ import { toggleDelete } from "../redux/deletePop";
 
 const ContactCard = ({ contact }) => {
   const [dropdown, setDropdown] = useState(false);
-  const [editPopup, seteditPopup] = useState(false);
-  const [deletePopup, setDeletePopup] = useState(false);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(toggleDelete(contact.email));
-  }, [dispatch, contact, deletePopup]);
-
-  useEffect(() => {
-    dispatch(togglePopUp({ action: "edit", email: contact.email }));
-  }, [dispatch, editPopup, contact]);
 
   const toggleDropdown = () => {
     setDropdown((prev) => !prev);
   };
 
   const toggleEditPopup = () => {
-    seteditPopup((prev) => !prev);
+    dispatch(togglePopUp({ action: "edit", email: contact.email }));
   };
 
   const toggleDeletePopup = () => {
-    setDeletePopup((prev) => !prev);
+    dispatch(toggleDelete(contact.email));
   };
 
   return (
@@ -106,14 +96,18 @@ const ContactCard = ({ contact }) => {
           </div>
 
           <div className="flex gap-2 justify-between w-full mt-4">
-            <button className="border-2 items-center flex  justify-center gap-3 border-black rounded-lg w-full py-2">
-              <MdOutlineLocalPhone className="text-xl" />
-              Call
-            </button>
-            <button className="border-2 items-center flex justify-center gap-3 border-black rounded-lg w-full py-2">
-              <MdOutlineEmail className="text-xl" />
-              Email
-            </button>
+            <a href={"mailto:" + contact.phone} className="w-full" >
+              <button className="border-2 items-center flex  justify-center gap-3 border-black rounded-lg w-full py-2">
+                <MdOutlineLocalPhone className="text-xl" />
+                Call
+              </button>
+            </a>
+            <a href={"mailto:" + contact.email} className="w-full">
+              <button className="border-2 items-center flex justify-center gap-3 border-black rounded-lg w-full py-2">
+                <MdOutlineEmail className="text-xl" />
+                Email
+              </button>
+            </a>
           </div>
         </div>
       </div>

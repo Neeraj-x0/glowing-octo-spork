@@ -115,7 +115,7 @@ const Hero = () => {
               Customers
             </span>
             <span className="bg-slate-200 mx-2 rounded px-2 py-1 ">
-              {data.length}
+              {customers.length}
             </span>
             <div className="w-full flex justify-end">
               <FiPlus className="text-2xl cursor-pointer" />

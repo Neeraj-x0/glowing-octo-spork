@@ -4,8 +4,8 @@ import { IoIosHelpCircleOutline } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { setDropdownOption } from "../redux/dropdownSlice";
-
-const Header = () => {
+import propTypes from "prop-types";
+const Header = ({ name }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(true);
   const dispatch = useDispatch();
 
@@ -36,9 +36,13 @@ const Header = () => {
           className="flex items-center gap-2 px-2 py-2 rounded-lg focus:outline-none"
           onClick={toggleDropdown}
         >
-          <span className="text-lg font-semibold px-2">John Doe</span>
+          <span className="text-lg font-semibold px-2">{name}</span>
           <img
-            src="https://randomuser.me/api/portraits/men/43.jpg"
+            src={
+              "https://ui-avatars.com/api/?name=" +
+              name.replace(" ", "+") +
+              "&background=random&color=fff&size=128&rounded=true&bold=true&length=1&font-size=0.33"
+            }
             alt="profile"
             className="w-8 h-8 rounded-full"
           />
@@ -50,3 +54,7 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  name: propTypes.string,
+};

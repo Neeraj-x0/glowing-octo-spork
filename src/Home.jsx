@@ -37,7 +37,7 @@ function Home() {
     }
 
     return () => {};
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cookies.token, navigate]);
 
   if (isValid === null) {
@@ -49,7 +49,7 @@ function Home() {
       {isValid ? (
         <div className="flex">
           <SideBar />
-          <Main />
+          <Main name={isValid.name} />
         </div>
       ) : (
         <div>Loading...</div>
