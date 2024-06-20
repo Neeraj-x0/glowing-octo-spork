@@ -6,7 +6,7 @@ import Home from './Home';
 import ResetPassword from './ResetPass';
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
