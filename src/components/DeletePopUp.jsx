@@ -12,7 +12,7 @@ const DeletePopUp = ({ email }) => {
   const handleDelete = () => {
     try {
       axios.post(
-        "https://machine-test-backend.onrender.com/profile/delete",
+        "https://machine-backend.neerajx0.xyz/profile/delete",
         { email },
         {
           headers: {

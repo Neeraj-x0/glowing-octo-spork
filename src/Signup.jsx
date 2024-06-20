@@ -21,7 +21,7 @@ const Signup = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://machine-test-backend.onrender.com/signup", data);
+      await axios.post("https://machine-backend.neerajx0.xyz/signup", data);
       navigate("/login");
     } catch (error) {
       if (error.response.status === 400){

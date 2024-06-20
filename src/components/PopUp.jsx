@@ -83,8 +83,8 @@ const PopUp = ({ action, email }) => {
     try {
       const url =
         action === "edit"
-          ? `https://machine-test-backend.onrender.com/profile/editUser`
-          : `https://machine-test-backend.onrender.com/profile/addUser`;
+          ? `https://machine-backend.neerajx0.xyz/profile/editUser`
+          : `https://machine-backend.neerajx0.xyz/profile/addUser`;
 
       await axios.post(
         url,

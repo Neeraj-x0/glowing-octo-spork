@@ -32,7 +32,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.post(
-        "https://machine-test-backend.onrender.com/profile/users",
+        "https://machine-backend.neerajx0.xyz/profile/users",
         {},
         {
           headers: {

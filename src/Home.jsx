@@ -13,7 +13,7 @@ function Home() {
   const checkToken = async () => {
     try {
       const response = await axios.post(
-        "https://machine-test-backend.onrender.com/profile",
+        "https://machine-backend.neerajx0.xyz/profile",
         {},
         {
           headers: {

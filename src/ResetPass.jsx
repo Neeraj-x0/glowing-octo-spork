@@ -26,7 +26,7 @@ const ResetPassword = () => {
     const checkToken = async () => {
       try {
         await axios.post(
-          "https://machine-test-backend.onrender.com/verify",
+          "https://machine-backend.neerajx0.xyz/verify",
           {},
           {
             headers: {
@@ -50,7 +50,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let response = await axios.post("https://machine-test-backend.onrender.com/reset", {
+      let response = await axios.post("https://machine-backend.neerajx0.xyz/reset", {
         token,
         newPassword,
       });
@@ -68,7 +68,7 @@ const ResetPassword = () => {
   const handleReset = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://machine-test-backend.onrender.com/forgot", {
+      await axios.post("https://machine-backend.neerajx0.xyz/forgot", {
         email,
       });
       setSuccess(true);

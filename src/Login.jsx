@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://machine-test-backend.onrender.com/login", {
+      const response = await axios.post("https://machine-backend.neerajx0.xyz/login", {
         email: username,
         password,
       });
@@ -71,15 +71,15 @@ const Login = () => {
         <div className="mt-4 text-center">
           <p className="text-gray-600 text-sm">
             Don't have an account?{" "}
-            <a href="/signup" className="text-black hover:underline">
+            <Link to="/signup" className="text-black hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
           <p className="text-gray-600 text-sm mt-1">
             Forgot Password?{" "}
-            <a href="/forgot" className="text-black hover:underline">
+            <Link to="/forgot" className="text-black hover:underline">
               Reset Password
-            </a>
+            </Link>
           </p>
         </div>
       </div>
