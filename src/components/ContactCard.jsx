@@ -102,7 +102,7 @@ const ContactCard = ({ contact }) => {
                 Call
               </button>
             </a>
-            <a href={"mailto:" + contact.email} className="w-full">
+            <a href={`mailto:${contact.email}`} className="w-full">
               <button className="border-2 items-center flex justify-center gap-3 border-black rounded-lg w-full py-2">
                 <MdOutlineEmail className="text-xl" />
                 Email
